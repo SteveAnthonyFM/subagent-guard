@@ -1,0 +1,9 @@
+{
+  "name": "subagent-guard",
+  "version": "0.1.0",
+  "description": "Caps concurrent subagents, caps their model tier, and lets you change both from a pane or /subagents.",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "Steve"
+  }
+}

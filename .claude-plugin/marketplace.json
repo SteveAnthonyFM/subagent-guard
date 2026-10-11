@@ -1,0 +1,5 @@
+{
+  "name": "subagent-guard",
+  "owner": { "name": "Steve" },
+  "plugins": [{ "name": "subagent-guard", "source": "./" }]
+}
