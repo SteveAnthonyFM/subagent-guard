@@ -6,9 +6,31 @@ When Claude hands a side task to a helper agent (a "subagent"), it can start sev
 
 > Unofficial community mod. Not affiliated with, endorsed by, or sponsored by Anthropic.
 
-| While a helper is working | When it has finished |
-|---|---|
-| ![The pane with one helper working](docs/pane-working.png) | ![The pane after a helper finished](docs/pane-finished.png) |
+## A quick look
+
+**Ready and waiting.** Claude and its resting helpers sit in the pen at the top. Below are your three settings: whether helpers are allowed, how many at once, and the strongest model they may use.
+
+<p align="center">
+  <img src="docs/pane-idle.png" alt="The pane when no helper is running" width="380">
+</p>
+
+**Out working.** Each helper's crab leaves the pen and gets its own row, with what it's doing right now, how many steps it has taken, and a running clock.
+
+<p align="center">
+  <img src="docs/pane-working.png" alt="Three helpers working at once" width="380">
+</p>
+
+**Finished.** The crabs head home. Each row keeps its time and token count, and a click opens a plain-language account of what it did.
+
+<p align="center">
+  <img src="docs/pane-finished.png" alt="Three finished helpers with their time and tokens" width="380">
+</p>
+
+**What it did.** A short summary from the helper itself, then a timed, step-by-step list.
+
+<p align="center">
+  <img src="docs/pane-details.png" alt="The details view showing a helper's summary and its steps" width="480">
+</p>
 
 ## What it does
 
