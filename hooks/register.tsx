@@ -373,6 +373,20 @@ export const register: Register = on => {
     return next(e)
   })
 
+  // A pane opened unasked can wait undrawn (narrow window, or a surface still attaching).
+  // A pane opened behind the person's own prompt is placed at any width, so the first
+  // prompt of the session seats it, once; closing it afterwards is respected.
+  let isSeated = false
+
+  on('prompt.submit', async ($, e, next) => {
+    if (!isSeated) {
+      isSeated = true
+      void $.ui.open({ id: PANE, title: 'Helper Agent Safeguard' })
+    }
+
+    return next(e)
+  })
+
   on('agent.spawn', async ($, e, next) => {
     let out = e
     if (!EXEMPT.includes(e.subagentType)) {
@@ -482,13 +496,12 @@ export const register: Register = on => {
     const [word, value] = args.split(/\s+/)
 
     if (args === '') {
-      const { isPlaced } = await $.ui.open({ id: PANE, title: 'Helper Agent Safeguard' })
+      // The pane may still be seating itself when open() answers, so never report failure here.
+      await $.ui.open({ id: PANE, title: 'Helper Agent Safeguard' })
       const s = await getSettings($)
 
       return {
-        text: isPlaced
-          ? `Helper Agent Safeguard pane opened. Now: ${describe(s)}.`
-          : `No surface draws panes here. Now: ${describe(s)}. Use /subagents max N, model <tier>, on|off, save, reset.`,
+        text: `Opening the Helper Agent Safeguard pane. Now: ${describe(s)}. (Typed shortcuts: /subagents max N, model <tier>, on, off, save, reset.)`,
       }
     }
     if (word === 'status') {
