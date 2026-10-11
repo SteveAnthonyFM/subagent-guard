@@ -1,9 +1,20 @@
 {
   "name": "subagent-guard",
-  "version": "0.1.1",
-  "description": "Caps concurrent subagents, caps their model tier, and lets you change both from a pane or /subagents.",
+  "version": "0.1.2",
+  "description": "Keeps helper agents (subagents) from running up your usage: limit how many run at once, cap their model, and watch them work in a live pane.",
   "types": "./types/index.d.ts",
   "author": {
-    "name": "Steve"
-  }
+    "name": "SteveAnthonyFM"
+  },
+  "homepage": "https://github.com/SteveAnthonyFM/subagent-guard",
+  "repository": "https://github.com/SteveAnthonyFM/subagent-guard",
+  "license": "MIT",
+  "keywords": [
+    "subagents",
+    "usage",
+    "token-saver",
+    "guard",
+    "pane",
+    "claude-code-mod"
+  ]
 }

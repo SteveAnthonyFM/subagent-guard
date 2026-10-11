@@ -1,5 +1,13 @@
 {
   "name": "subagent-guard",
-  "owner": { "name": "Steve" },
-  "plugins": [{ "name": "subagent-guard", "source": "./" }]
+  "owner": {
+    "name": "SteveAnthonyFM"
+  },
+  "plugins": [
+    {
+      "name": "subagent-guard",
+      "source": "./"
+    }
+  ],
+  "description": "Helper Agent Safeguard: limit and watch Claude's helper agents."
 }
