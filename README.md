@@ -1,4 +1,4 @@
-# Helper Agent Safeguard
+# Claude Helper Agent Safeguard (Mod)
 
 **Keep Claude's background helpers from running up your usage, and watch them work.**
 
