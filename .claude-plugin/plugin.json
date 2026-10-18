@@ -1,6 +1,6 @@
 {
   "name": "subagent-guard",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Keeps helper agents (subagents) from running up your usage: limit how many run at once, cap their model, and watch them work in a live pane.",
   "types": "./types/index.d.ts",
   "author": {

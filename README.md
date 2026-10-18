@@ -53,7 +53,7 @@ claude plugin marketplace add SteveAnthonyFM/subagent-guard
 claude plugin install subagent-guard@subagent-guard
 ```
 
-Fully quit and reopen the Claude desktop app. The pane opens beside your first message of each new session. On a wide window it may appear right away.
+Fully quit and reopen the Claude desktop app. The pane never opens by itself: type `/subagents` whenever you want to see it. Your settings are always visible in the status line under the prompt, and the limits work whether or not the pane is open.
 
 Works on macOS and Windows (installed and tested on both). Requires a recent version of Claude Code and the Claude desktop app, since it draws a side pane.
 
@@ -87,7 +87,7 @@ You can also change things by typing:
 - **It limits helpers that run at the same time, not the total.** You can still have many, one after another.
 - **A helper's own fixed model may not be visible.** If a custom agent pins a stronger model in its own definition, the cap can't always see it.
 - **Token counts appear when a helper finishes.** The live line and step list update as it works.
-- **The pane can't open before your first message** in a narrow window. That's a Claude rule for panes opened without being asked.
+- **The pane opens only when you ask.** Type `/subagents`; it does not appear on its own.
 - **Saved defaults are per device.**
 
 ## Privacy
@@ -108,7 +108,7 @@ claude plugin uninstall subagent-guard@subagent-guard
 ## Troubleshooting
 
 - **`claude` is not recognized.** Install Claude Code (see Install), then open a new terminal window.
-- **No pane appears.** Send your first message, or type `/subagents`. Then run `claude plugin list` and check that `subagent-guard` shows "enabled".
+- **No pane appears.** That's expected until you type `/subagents`. If the command isn't found, run `claude plugin list` and check that `subagent-guard` shows "enabled", then restart Claude.
 - **Clicks need a second try while a helper runs.** The pane redraws once a second while a helper works; if a click doesn't land, click again.
 
 ## For developers

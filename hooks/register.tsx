@@ -368,22 +368,6 @@ export const register: Register = on => {
       name: 'subagents',
       description: 'Subagent safeguard: pane, or "max N", "model <tier>", "on|off", "save", "reset", "status"',
     })
-    void $.ui.open({ id: PANE, title: 'Helper Agent Safeguard' })
-
-    return next(e)
-  })
-
-  // A pane opened unasked can wait undrawn (narrow window, or a surface still attaching).
-  // A pane opened behind the person's own prompt is placed at any width, so the first
-  // prompt of the session seats it, once; closing it afterwards is respected.
-  let isSeated = false
-
-  on('prompt.submit', async ($, e, next) => {
-    if (!isSeated) {
-      isSeated = true
-      void $.ui.open({ id: PANE, title: 'Helper Agent Safeguard' })
-    }
-
     return next(e)
   })
 

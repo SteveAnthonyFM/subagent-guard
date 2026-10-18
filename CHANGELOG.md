@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.0
+- The pane no longer opens on its own, at the start of a session or with your first message. Type `/subagents` to open it. The limits and the status line keep working with the pane closed.
+
 ## 0.1.2
 - Public-ready: README with screenshots, license, privacy note and fuller manifest details. No behaviour changes.
 
